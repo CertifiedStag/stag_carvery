@@ -41,3 +41,19 @@ RegisterNetEvent('stag_carvery:ToggleDuty', function()
     TriggerServerEvent('QBCore:ToggleDuty')
 end)
 ```
+
+# Add To jobs.lua
+```
+carveryjob = {
+		label = "Carvery Job",
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = "Trainee", payment = 50 },
+			['1'] = { name = "Employee", payment = 75 },
+			['2'] = { name = "Supervisor", payment = 100 },
+			['3'] = { name = "Head Supervisor", payment = 125 },
+			['4'] = { name = "Owner", isboss = true, payment = 150 },
+		},
+	},
+```
