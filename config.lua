@@ -1,0 +1,53 @@
+return {
+    CookDuration = 10000,
+    BlipCoords = vec3(15.36, -1602.15, 29.38),
+    HungerFill = { -- How much they fill your hunger
+        ['beefcarvery'] = {emote = 'dinner', amt = math.random(48, 54)},
+        ['chickencarvery'] = {emote = 'dinner', amt = math.random(48, 54)},
+        ['gammoncarvery'] = {emote = 'dinner', amt = math.random(48, 54)},
+        ['mixedcarvery'] = {emote = 'dinner', amt = math.random(48, 54)},
+        ['veggiecarvery'] = {emote = 'dinner', amt = math.random(48, 54)},
+    },
+    ThirstFill = { -- How much they fill your thirst.
+        ['orangejuice'] = {emote = 'cadrink', amt = math.random(48, 54)},
+        ['applejuice'] = {emote = 'cadrink', amt = math.random(48, 54)},
+    },
+    Zones = {
+        { coords = vec3(15.04, -1600.67, 30.5), radius = 1.0, icon = 'far fa-clipboard', event = 'stag_carvery:client:frontTray', label = 'Food Tray', type = 'stash', stashLabel = 'CA_Front_Tray_1', slots = 10, weight = 75000}, 
+        { coords = vec3(13.22, -1601.45, 29.38), radius = 0.9, icon = 'fa-solid fa-beer-mug-empty', event = 'stag_carvery:client:drinkStation', label = 'Make Drinks', job = 'carveryjob' }, 
+        { coords = vec3(12.46, -1597.98, 29.38), radius = 0.9, icon = 'fa-solid fa-burger', event = 'stag_carvery:client:makeFood', label = 'Make Food', job = 'carveryjob' }, 
+        { coords = vec3(9.97, -1600.93, 29.37), radius = 0.7, icon = 'fa-solid fa-fire-burner', event = 'stag_carvery:client:prepStation', label = 'Get Messy', job = 'carveryjob' },
+        { coords = vec3(21.99, -1602.69, 29.38), radius = 0.7, icon = 'fa-solid fa-box-open', event = 'stag_carvery:client:ingredientStore', label = 'Ingredients', job = 'carveryjob', type = 'shop' },
+        { coords = vec3(15.39, -1595.65, 29.28), radius = 2.0, icon = 'far fa-clipboard', event = 'stag_carvery:client:passThrough', label = 'Big Tray', job = 'carveryjob', type = 'stash', stashLabel = 'CA_Big_Tray', slots = 20, weight = 150000 },
+        { coords = vec3(8.88, -1602.42, 29.37), radius = 1.0, icon = 'far fa-clipboard', event = 'stag_carvery:client:frontTray2', label = 'Fridge', type = 'stash', stashLabel = 'CA_Fridge', slots = 10, weight = 75000},
+        { coords = vec3(13.92, -1600.66, 29.38), radius = 0.9, icon = 'fa-brands fa-cc-visa', event = 'stag_carvery:client:useRegister', label = 'Bill Player', job = 'carveryjob' },
+        { coords = vec3(13.92, -1600.66, 29.38), radius = 0.9, icon = 'fas fa-sign-in-alt', event = 'stag_carvery:ToggleDuty', label = 'Duty Toggle', job = 'carveryjob' },
+
+    },
+    Items = { -- qb-inventory
+    label = 'Shop',
+        slots = 13,
+        items = {
+            [1] = { name = 'broccoli', price = 0, amount = 500, info = {}, type = 'item', slot = 1, },
+            [2] = { name = 'oil', price = 0, amount = 500, info = {}, type = 'item', slot = 2, },
+            [3] = { name = 'peas', price = 0, amount = 500, info = {}, type = 'item', slot = 3, },
+            [4] = { name = 'carrot', price = 0, amount = 500, info = {}, type = 'item', slot = 4, },
+            [5] = { name = 'flour', price = 0, amount = 500, info = {}, type = 'item', slot = 5, },
+            [6] = { name = 'yeast', price = 0, amount = 500, info = {}, type = 'item', slot = 6, },
+            [7] = { name = 'beefstock', price = 0, amount = 500, info = {}, type = 'item', slot = 7, },
+            [8] = { name = 'egg', price = 0, amount = 500, info = {}, type = 'item', slot = 8, },
+            [9] = { name = 'water_bottle', price = 0, amount= 500, info = {}, type = 'item', slot = 9, },
+            [10] = { name = 'roastchicken', price = 0, amount= 500, info = {}, type = 'item', slot = 10, },
+            [11] = { name = 'roastgammon', price = 0, amount= 500, info = {}, type = 'item', slot = 11, },
+            [12] = { name = 'beefjoint', price = 0, amount= 500, info = {}, type = 'item', slot = 12, },
+            [13] = { name = 'sugarpacket', price = 0, amount= 500, info = {}, type = 'item', slot = 13, },
+        }
+    },
+    Emotes = {
+        dinner = {prop = `prop_taco_01`, bone = 18905, anim = 'mp_player_int_eat_burger', dict = 'mp_player_inteat@burger', coords = vec3(0.130000, 0.050000, 0.020000), rot = vec3(-50.000000, 16.000000, 60.000000)},
+        bbqf = {prop = `v_ind_cfknife`, bone = 28422, anim = 'idle_b', dict = 'amb@prop_human_bbq@male@idle_a', coords = vec3(0.0, 0.0, 0.0), rot = vec3(0.0, 0.0, 0.0)},
+        nachos = {prop = `prop_food_bs_chips`, bone = 18905, anim = 'mp_player_int_eat_burger_fp', dict = 'mp_player_inteat@burger', coords = vec3(0.090000, -0.060000, 0.050000), rot = vec3(300.000000, 150.000000, 0.000000)},
+        cadrink = {prop = `prop_cs_paper_cup`, bone = 28422, anim = 'idle_c', dict = 'amb@world_human_drinking@coffee@male@idle_a', coords = vec3(0.02, 0.0, -0.10), rot = vec3(0.0, 0.0, -0.50)},
+        drinks = {prop = `prop_cs_paper_cup`, bone = 28422, anim = 'idle_a', dict = 'amb@prop_human_bbq@male@idle_a', coords = vec3(0.0, 0.0, 0.0), rot = vec3(0.0, 0.0, 0.0)},
+    }
+}
