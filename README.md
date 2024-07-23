@@ -37,7 +37,7 @@ Add to items.lua:
 
 If using seperate multijob remove from cl_carvery:
 ```
-RegisterNetEvent('stag_tacoattack:ToggleDuty', function()
+RegisterNetEvent('stag_carvery:ToggleDuty', function()
     TriggerServerEvent('QBCore:ToggleDuty')
 end)
 ```
